@@ -21,6 +21,7 @@ async def on_ready():
 
 @bot.command()
 async def countdown(ctx):
+    print("Countdown: executing")
     try:
         for i in range(10, 0, -1):
             await ctx.send(f"{i}...")
@@ -28,10 +29,16 @@ async def countdown(ctx):
         await ctx.send("GOOOOOOOOOOOOO!")
     except Exception as e:
         print(f"An error occurred: {e}")
+    print("Countdown: completed")
 
 @bot.command()
 async def about(ctx):
-    print("")
+    print("About: executing")
+    try:
+        await ctx.send("In the near future, this command is going to give information about the bot and its developers.")
+    except Exception as e:
+        print(f"An erro occurred: {e}")
+    print("About: completed")
 
 
 
