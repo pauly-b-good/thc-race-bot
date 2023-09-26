@@ -40,6 +40,15 @@ async def about(ctx):
         print(f"An erro occurred: {e}")
     print("About: completed")
 
+# @bot.command()
+# async def help(ctx):
+#     print("Help: executing")
+#     try:
+#         await ctx.send("In the near future, this command is going give a list of all available commands and descriptions for each")
+#     except Exception as e:
+#         print(f"An erro occurred: {e}")
+#     print("Help: completed")
+
 
 
 
