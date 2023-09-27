@@ -19,11 +19,14 @@ bot = commands.Bot(command_prefix=prefix, intents=intents)
 async def on_ready():
     print(f"Logged in as {bot.user.name}")
 
-@bot.command()
-async def countdown(ctx):
+@bot.command(help="From a user given number or 10 (whichever is lower), a countdown begins and goes to 1 then GO! one second at a time.")
+async def countdown(ctx, arg):
     print("Countdown: executing")
+    start_countdown_from = 10
+    if arg.isnumeric():
+        start_countdown_from = int(arg) > 10 if 10 else int(arg)
     try:
-        for i in range(10, 0, -1):
+        for i in range(start_countdown_from, 0, -1):
             await ctx.send(f"{i}...")
             await asyncio.sleep(1)
         await ctx.send("GOOOOOOOOOOOOO!")
