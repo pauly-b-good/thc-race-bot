@@ -63,10 +63,11 @@ async def countdown(ctx, arg="10"):
     try:
         if arg.isdigit():
             start_countdown_from = int(arg) if int(arg) <= 10 else int(arg)
+        countdown_message = ""
         for i in range(start_countdown_from, 0, -1):
-            await ctx.send(f"{i}...")
-            await asyncio.sleep(1)
-        await ctx.send("GOOOOOOOOOOOOO!")
+            countdown_message += f"{i}...\n"
+        countdown_message += "GOOOOOOOOOOOOO!"
+        await ctx.send(countdown_message, tts=True)  # Send the entire message with TTS enabled
     except ValueError as v:
         print("An error occurred: {v}")
     except Exception as e:
