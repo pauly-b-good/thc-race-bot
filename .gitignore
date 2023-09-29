@@ -1,2 +1,4 @@
 .env
 thpRaceBotInfo.txt
+__pycache__/
+buffer.json
