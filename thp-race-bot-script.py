@@ -57,6 +57,8 @@ async def assettoCorsaSetupInstructions(ctx):
 
 # /countdown [int] Command
 @bot.command(help="From a user given number or 10 (whichever is lower), a countdown begins and goes to 1 then GO! one second at a time.")
+#only the admin can use this command
+@commands.has_role('Admin')
 async def countdown(ctx, arg="10"):
     print(f"Countdown: executing at {datetime.now()}")
     start_countdown_from = 10
