@@ -10,8 +10,8 @@ from colorama import Fore
 
 # loads environment variables from the .env file
 load_dotenv()
-# DISCORD_TOKEN = os.getenv("DISCORD_TOKEN")
-TEST_TOKEN = os.getenv("TEST_TOKEN")
+DISCORD_TOKEN = os.getenv("DISCORD_TOKEN")
+# TEST_TOKEN = os.getenv("TEST_TOKEN")
 SERVER_URL = os.getenv("SERVER_URL")
 SETUP_INSTRUCTIONS_URL = os.getenv("SETUP_INSTRUCTIONS_URL")
 
@@ -90,8 +90,8 @@ async def about(ctx):
 
 
 ### use this token to test changes in test discord server ###
-bot.run(TEST_TOKEN)
+# bot.run(TEST_TOKEN)
 
 ### use this token for deploying changes to live bot ###
-# bot.run(DISCORD_TOKEN)
+bot.run(DISCORD_TOKEN)
 
